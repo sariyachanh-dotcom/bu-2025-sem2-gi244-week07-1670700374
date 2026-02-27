@@ -5,13 +5,26 @@ public class SpawnManager : MonoBehaviour
     public Transform spawnPoint;
     public GameObject obstaclePrefab;
 
+    //public PlayerController player;
+
     void Start()
     {
-
+        InvokeRepeating(nameof(Spawn), 0f, 2f);
     }
 
     void Spawn()
     {
+        //if (player.isGameOver == true)
+        //{
+        //    return;
+        //}
+        GameObject playerGo = GameObject.Find("player");
+        PlayerController player = playerGo.GetComponent<PlayerController>();
+        if (player.isGameOver == true)
+        {
+            return;
+        }
+
         Instantiate(
             obstaclePrefab,
             spawnPoint.position,
