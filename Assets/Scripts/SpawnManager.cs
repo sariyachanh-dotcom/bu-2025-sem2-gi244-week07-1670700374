@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
         //{
         //    return;
         //}
-        GameObject playerGo = GameObject.Find("player");
+        GameObject playerGo = GameObject.Find("Player");
         PlayerController player = playerGo.GetComponent<PlayerController>();
         if (player.isGameOver == true)
         {
